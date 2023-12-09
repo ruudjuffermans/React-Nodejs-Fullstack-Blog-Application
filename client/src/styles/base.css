@@ -1,0 +1,88 @@
+::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-shadow: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Quicksand;
+}
+
+body {
+  font-family: Quicksand;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color-text-1);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: inherit;
+  width: inherit;
+  height: inherit;
+  color: var(--color-link);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  background: none;
+  border-radius: var(--radius-1);
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+h3 {
+  font-weight: 800;
+  color: var(--color-text-2);
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 3s ease-in;
+}

@@ -1,0 +1,43 @@
+.header {
+  background-color: aqua;
+
+}
+
+.divider {
+  display: flex;
+  height: 80px;
+  padding: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 80px;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__right {
+  flex-grow: 1;
+}
+
+.header__link {
+  color: grey;
+}
+
+.header__link:hover:not(.active) {
+  color: lightgray;
+}
+
+
+.active {
+  color: white;
+}
+

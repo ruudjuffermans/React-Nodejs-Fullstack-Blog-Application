@@ -14,8 +14,12 @@ const Container = ({ className, children, ...props }) => {
   );
 };
 
-export const NarrowContainer = ({ children }) => {
-  return <div className={styles.narrowcontainer}>{children}</div>;
+export const Content = ({ children }) => {
+  return <div className={styles.content}>{children}</div>;
+};
+
+export const Side = ({ children }) => {
+  return <div className={styles.side}>{children}</div>;
 };
 
 export default Container;

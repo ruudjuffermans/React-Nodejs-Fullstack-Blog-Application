@@ -16,7 +16,6 @@ const Header = ({ navigation = [...navigationLinks] }) => {
     <div>
       <Container>
         <header className={styles.header}>
-          <div className={styles.header__menu}>menu</div>
           <div className={styles.header__logo}>
             <a href="/">LOGO</a>
           </div>

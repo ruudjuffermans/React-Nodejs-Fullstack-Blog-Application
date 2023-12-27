@@ -1,4 +1,4 @@
-import ButtonPrimary from "../../components/ButtonPrimary";
+import Button from "../../components/Button";
 import Card from "../../components/Card";
 import Heading from "../../components/Heading";
 import axiosInstance from "../../service/axios";
@@ -31,7 +31,7 @@ const ActivateAccount = () => {
   return (
     <Card>
       <Heading tag={"h3"}>Activate Account</Heading>
-      <ButtonPrimary onClick={activateAccount}>activate</ButtonPrimary>
+      <Button onClick={activateAccount}>activate</Button>
     </Card>
   );
 };

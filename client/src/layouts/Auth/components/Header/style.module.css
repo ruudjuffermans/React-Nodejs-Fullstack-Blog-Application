@@ -1,13 +1,6 @@
-:root .header {
-  --header-height: 66px;
-  --header-bg: #ffffff;
-  --header-border: none;
-  --header-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-}
-
 .header {
   display: flex;
-  height: 100%;
+  height: 80px;
   padding: 8px 0;
   align-items: center;
   justify-content: space-between;
@@ -32,9 +25,23 @@
 
 .header__nav {
   display: flex;
-  gap: 4px;
+  gap: 20px;
 }
 
 .header__right {
   flex-grow: 1;
 }
+
+.header__link {
+  color: grey;
+}
+
+.header__link:hover:not(.active) {
+  color: lightgray;
+}
+
+
+.active {
+  color: white;
+}
+

@@ -1,18 +1,13 @@
 import { useState } from "react";
 import Container from "../../../../components/Container";
-import Link from "../../../../components/Link";
-import Menu from "../../../../components/Menu";
 import styles from "./style.module.css";
-import Icon from "../../../../components/Icon/Icon";
-import Button from "../../../../components/Button";
+import { NavLink } from "react-router-dom";
 
 const navigationLinks = [
   { name: "Login", to: "/login" },
   { name: "Register", to: "/register" },
   { name: "Forgot Password", to: "/forgot-password" },
-  { name: "Chat", to: "/chat" },
-  { name: "Profile", to: "/profile" },
-  { name: "Story", to: "/story" },
+  { name: "Home", to: "/" },
 ];
 
 const Header = ({ navigation = [...navigationLinks] }) => {
@@ -26,15 +21,17 @@ const Header = ({ navigation = [...navigationLinks] }) => {
             <a href="/">LOGO</a>
           </div>
 
-          <ul className={styles.header__nav}>
+          <div className={styles.header__nav}>
             {navigation.map(({ name, to }, i) => (
-              <li key={i}>
-                <Button key={i} to={to}>
+              <div key={i}>
+                <NavLink className={({ isActive }) =>
+                  isActive ? `${styles.header__link} ${styles.active}` : styles.header__link}
+                  to={to}>
                   {name}
-                </Button>
-              </li>
+                </NavLink>
+              </div>
             ))}
-          </ul>
+          </div>
           <div className={styles.header__right}></div>
         </header>
       </Container>

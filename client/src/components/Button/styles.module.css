@@ -47,3 +47,51 @@
   cursor: default;
   pointer-events: painted;
 }
+
+.btn {
+  word-break: keep-all;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+  cursor: pointer;
+  color: white;
+
+  background-color: orange;
+  transition: background-color 0.1s linear, border-color 0.1s linear,
+    color 0.1s linear;
+}
+
+.btn__inner {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.btn__icon {
+  margin-left: 2px;
+  height: 16px;
+  width: 16px;
+}
+
+.btn:not(:disabled):hover {
+  background-color: red;
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: painted;
+}
+

@@ -1,7 +1,7 @@
 import { Form } from "formik";
 import withForm from "./withForm";
 import InputField from "../../components/InputField";
-import ButtonPrimary from "../../components/ButtonPrimary";
+import Button from "../../components/Button";
 
 const LoginForm = (x) => {
   return (
@@ -13,13 +13,13 @@ const LoginForm = (x) => {
         name="password"
         placeholder="Password"
       />
-      <ButtonPrimary
+      <Button
         loading={x.isSubmitting}
         style={{ width: "100%" }}
         type="submit"
       >
         Login
-      </ButtonPrimary>
+      </Button>
     </Form>
   );
 };

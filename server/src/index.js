@@ -6,7 +6,8 @@ import cors from "cors";
 import config from "./config/index.js";
 import router from "./router/index.js";
 import bodyParser from "body-parser";
-import logger from "./utils/logger.js";
+import { AccessLogger, ErrorLogger } from "./loggers/index.js";
+import { InternalServerError } from "./errors/index.js";
 
 const corsConfiguration = {
   origin: config.CLIENT_URL,
@@ -15,25 +16,43 @@ const corsConfiguration = {
 
 const app = express();
 
+// Initialize the loggers
+const accessLogger = new AccessLogger("AccessService");
+const errorLogger = new ErrorLogger("ErrorService");
+
 try {
   app.use(bodyParser.json());
   app.use(cors(corsConfiguration));
   app.use("/public", express.static("public"));
 
   app.use((req, res, next) => {
-    logger.info(chalk`{green ${req.method}} {blue ${req.url}}`);
+    accessLogger.access(
+      chalk`Received request on {green ${req.method}} {blue ${req.url}} {yellow ${req.path}}`
+    );
     next();
   });
 
   app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send("Something broke!");
+    errorLogger.error("internal server error");
+    const error = new InternalServerError();
   });
 
   db.sync().then(() => {
-    db.options.logging = true;
+    db.options.logging = false;
 
     app.use(router);
+
+    app.use((err, req, res, next) => {
+      const error = new InternalServerError();
+      errorLogger.error(error);
+      console.log(error.message);
+
+      res.status(error.statusCode).send({
+        success: false,
+        message: error.message,
+        ...(process.env.NODE_ENV === "development" && { stack: err.stack }), // Include stack trace in development mode
+      });
+    });
   });
 
   const env = config.ENV;
@@ -46,27 +65,10 @@ try {
 
   // Start the server
   httpServer.listen(port, () => {
-    logger.console.info(
+    accessLogger.access(
       chalk`server: {green running}, port: {red ${port.toString()}}, env: {blue ${env}}`
     );
   });
-  // app.use((err, req, res, next) => {
-  //   const statusCode = err.statusCode || 500;
-  //   res.status(statusCode).json({
-  //     statusCode,
-  //     name: err.name,
-  //     message: err.message,
-  //     path: req.path,
-  //     error: err.description,
-  //     stack: err.stack,
-  //   });
-  //   next(err);
-  // });
-
-  // app.all("*", (req, res, next) => {
-  //   const err = new PageNotFoundError();
-  //   next(err);
-  // });
 } catch (error) {
   console.log("hit");
   console.log(error);

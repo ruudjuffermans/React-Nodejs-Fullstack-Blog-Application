@@ -7,8 +7,8 @@ const transporter = nodemailer.createTransport({
   secure: config.MAIL_SECURE,
   tls: config.MAIL_ALLOW_SELF_SIGNED_CERTS
     ? {
-        rejectUnauthorized: false,
-      }
+      rejectUnauthorized: false,
+    }
     : undefined,
   auth: {
     user: config.MAIL_USER,
@@ -26,28 +26,6 @@ const smtpSender = async function (to, subject, body) {
       to,
       subject,
       html: body,
-      attachments: [
-        {
-          filename: "wave-bg.png",
-          path: `./public/site/wave-bg.png`,
-          cid: "wave", //same cid value as in the html img src
-        },
-        {
-          filename: "logo.png",
-          path: `./public/site/logo.png`,
-          cid: "logo", //same cid value as in the html img src
-        },
-        {
-          filename: "reset-password.png",
-          path: `./public/site/reset-password.png`,
-          cid: "reset", //same cid value as in the html img src
-        },
-        {
-          filename: "activate-account.png",
-          path: `./public/site/activate-account.png`,
-          cid: "activate", //same cid value as in the html img src
-        },
-      ],
     });
     return !!response.accepted;
   } catch (e) {

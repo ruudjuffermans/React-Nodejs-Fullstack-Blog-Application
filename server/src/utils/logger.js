@@ -40,29 +40,65 @@ const consoleFormat = printf(({ level, message, label, timestamp }) => {
   return chalk`${colorizedLevel}: ${message}`;
 });
 
-const logger = createLogger({
-  level: "debug",
-  format: combine(label({ label: env }), timestamp(), logFormat),
-  defaultMeta: { service: "logger" },
-  transports: [
-    new transports.File({
-      dirname: "logs",
-      filename: getYearMonthDayFilename("error"),
-      level: "error",
-    }),
-    new transports.File({
-      dirname: "logs",
-      filename: getYearMonthDayFilename(),
-    }),
-    new transports.Console({
-      format: combine(
-        label({ label: "development" }),
-        timestamp(),
-        consoleFormat
+class BaseLogger {
+  constructor(serviceName) {
+    this.logger = createLogger({
+      level: "debug",
+      defaultMeta: { service: "logger" },
+      format: format.combine(
+        format.label({ label: serviceName }),
+        format.timestamp(),
+        format.printf(
+          (info) =>
+            `${info.timestamp} [${info.label}] ${info.level}: ${info.message}`
+        )
       ),
-    }),
-  ],
-});
+      transports: [
+        new transports.File({
+          dirname: "logs",
+          filename: getYearMonthDayFilename("error"),
+          level: "error",
+        }),
+        new transports.File({
+          dirname: "logs",
+          filename: getYearMonthDayFilename(),
+        }),
+        new transports.Console({
+          format: combine(
+            label({ label: "development" }),
+            timestamp(),
+            consoleFormat
+          ),
+        }),
+      ],
+    });
+  }
+  log(level, message) {
+    this.logger.log(level, message);
+  }
+}
+// A specific logger class for errors
+export class ErrorLogger extends BaseLogger {
+  constructor(serviceName) {
+    super(serviceName); // Call the base class constructor
+  }
+
+  error(message) {
+    super.log("error", message);
+  }
+}
+
+// A specific logger class for access logs
+export class AccessLogger extends BaseLogger {
+  constructor(serviceName) {
+    super(serviceName); // Call the base class constructor
+  }
+
+  access(message) {
+    super.log("info", message);
+  }
+}
+
 const consoleOnly = createLogger({
   level: "debug",
   format: combine(label({ label: env }), timestamp(), logFormat),
@@ -89,9 +125,6 @@ const fileOnly = createLogger({
     }),
   ],
 });
-
-logger.console = consoleOnly;
-logger.file = fileOnly;
 
 // if (env !== "production") {
 //   logger.add(
@@ -169,4 +202,4 @@ logger.file = fileOnly;
 
 // logger.error(new Error("Error as info"));
 
-export default logger;
+// export default logger;

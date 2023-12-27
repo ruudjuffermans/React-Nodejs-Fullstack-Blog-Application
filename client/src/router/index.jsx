@@ -6,6 +6,9 @@ import AppLayout from "../layouts/App";
 
 import Home from "../pages/Home";
 import ActivateAccount from "../pages/ActivateAccount";
+import Post from "../pages/Post";
+import Account from "../pages/Account";
+import Profile from "../pages/Profile";
 
 const Login = lazy(() => import("../pages/Login"));
 const Register = lazy(() => import("../pages/Register"));
@@ -17,6 +20,9 @@ const Router = () => {
       <Routes>
         <Route element={<AppLayout />}>
           <Route path={"/"} element={<Home />} />
+          <Route path={"/post/:id"} element={<Post />} />
+          <Route path={"/account"} element={<Account />} />
+          <Route path={"/profile/:id"} element={<Profile />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route

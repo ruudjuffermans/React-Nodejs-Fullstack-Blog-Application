@@ -1,7 +1,7 @@
 import { Form } from "formik";
 import withForm from "./withForm";
 import InputField from "../../../../components/InputField";
-import ButtonPrimary from "../../../../components/ButtonPrimary";
+import Button from "../../../../components/Button";
 
 const ForgotPasswordForm = () => {
   return (
@@ -11,9 +11,9 @@ const ForgotPasswordForm = () => {
         label="forgot password"
         placeholder="Email address or phone number"
       />
-      <ButtonPrimary style={{ width: "100%" }} type="submit">
+      <Button style={{ width: "100%" }} type="submit">
         Submit
-      </ButtonPrimary>
+      </Button>
     </Form>
   );
 };

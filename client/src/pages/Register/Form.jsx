@@ -3,7 +3,7 @@ import { Form } from "formik";
 import Row, { Col } from "../../components/Row";
 import withForm from "./withForm";
 import InputField from "../../components/InputField";
-import ButtonPrimary from "../../components/ButtonPrimary";
+import Button from "../../components/Button";
 
 const RegisterForm = ({ handleSubmit }) => {
   return (
@@ -41,9 +41,9 @@ const RegisterForm = ({ handleSubmit }) => {
         placeholder="Email address or phone number"
       />
 
-      <ButtonPrimary style={{ width: "100%" }} type="submit">
+      <Button style={{ width: "100%" }} type="submit">
         Register
-      </ButtonPrimary>
+      </Button>
     </Form>
   );
 };

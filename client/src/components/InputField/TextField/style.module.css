@@ -1,0 +1,27 @@
+.textfield {
+  font-size: 14px;
+  color: #0d1216;
+  font-weight: 400;
+  /* border-bottom: 10px solid var(--border-input); */
+  transition: all var(--transition);
+
+  border: 1px solid transparent;
+  border-color: rgba(128, 128, 128, 0.319);
+  border-radius: var(--fKgqJA, 4px);
+  box-sizing: border-box;
+  color: #0d1216;
+  outline: 0;
+
+  height: 40px;
+  padding: 0 12px;
+  position: relative;
+  width: 100%;
+}
+
+.textfield:focus {
+  border-color: var(--color-primary);
+}
+
+.textfield::placeholder {
+  opacity: 0.8;
+}

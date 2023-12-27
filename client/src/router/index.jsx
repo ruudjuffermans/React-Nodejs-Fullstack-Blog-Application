@@ -5,6 +5,7 @@ import AuthLayout from "../layouts/Auth";
 import AppLayout from "../layouts/App";
 
 import Home from "../pages/Home";
+import ActivateAccount from "../pages/ActivateAccount";
 
 const Login = lazy(() => import("../pages/Login"));
 const Register = lazy(() => import("../pages/Register"));
@@ -31,6 +32,14 @@ const Router = () => {
             element={
               <Suspense>
                 <Register />
+              </Suspense>
+            }
+          />
+          <Route
+            path={"/activate-account"}
+            element={
+              <Suspense>
+                <ActivateAccount />
               </Suspense>
             }
           />

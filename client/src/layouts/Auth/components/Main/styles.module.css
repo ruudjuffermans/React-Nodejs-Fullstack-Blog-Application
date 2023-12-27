@@ -1,0 +1,14 @@
+.main {
+  flex-grow: 1;
+}
+
+.main__top {
+  margin-top: 50px;
+}
+
+.main__center {
+  padding-top: 64px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}

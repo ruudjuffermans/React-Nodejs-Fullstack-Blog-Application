@@ -1,0 +1,58 @@
+:root .textfield {
+  --card-p: 20px;
+  --card-bg: var(--color-bg-top);
+  --card-border-r: 16px;
+  --card-border: none;
+  --card-shadow: var(--shadow-1);
+}
+
+.textfield {
+  display: block;
+  height: var(--height-input);
+  padding: 0 var(--pad-input);
+  background: var(--bg-input);
+  background: #fff7db;
+  font-size: 16px;
+  font-family: DMSans;
+  border: 0;
+  color: var(--color-text);
+  font-weight: 300;
+  border-bottom: 1px solid var(--border-input);
+  transition: all var(--transition);
+  width: 100%;
+  outline: #ffffff00;
+}
+
+.textfield:focus {
+  outline: 1px dotted rgb(200, 200, 200);
+  border-color: var(--text-color);
+  background-color: var(--light-2);
+  background-color: rgb(255, 243, 209);
+}
+
+.textfield:focus::placeholder {
+  color: #ffffff00;
+}
+
+.textfield::placeholder {
+  color: grey;
+  font-weight: 400;
+  transition: all var(--transition);
+  font-family: DMSANS;
+  line-height: 1.5;
+}
+
+.textarea {
+  height: unset;
+  padding-top: 10px;
+  font-family: DMSans;
+}
+
+.char__count {
+  color: rgba(0, 0, 0, 0.266);
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  letter-spacing: 1.5px;
+  font-size: 1.2em;
+}

@@ -1,0 +1,25 @@
+.error__wrapper {
+  padding-top: 6px;
+  /* background-color: pink; */
+}
+
+.error__text {
+  font-size: 12px;
+  display: block;
+  height: 20px;
+  font-weight: 400;
+  color: var(--color-error);
+}
+
+.error__item {
+  font-size: 11px;
+  display: block;
+  height: 19px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-error);
+}
+
+.error__item::before {
+  content: "• ";
+}

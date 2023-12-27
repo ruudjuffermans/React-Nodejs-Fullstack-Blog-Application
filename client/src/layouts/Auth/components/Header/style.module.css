@@ -1,0 +1,40 @@
+:root .header {
+  --header-height: 66px;
+  --header-bg: #ffffff;
+  --header-border: none;
+  --header-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  display: flex;
+  height: 100%;
+  padding: 8px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__menu {
+  display: none;
+}
+
+.header__logo {
+  width: 80px;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+}
+
+.header__nav {
+  margin-left: 16px;
+  margin-right: 48px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 4px;
+}
+
+.header__right {
+  flex-grow: 1;
+}

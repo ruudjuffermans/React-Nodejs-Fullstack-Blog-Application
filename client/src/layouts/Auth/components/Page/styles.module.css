@@ -1,0 +1,41 @@
+.page {
+  display: flex;
+  min-width: 300px;
+  flex-direction: column;
+}
+
+.background {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-image: url(https://static.canva.com/web/images/543d7829999d351b301ced5ed3c1f087.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay {
+  height: 100%;
+  left: 0;
+  min-height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+.children {
+  z-index: 2;
+  display: flex;
+  min-width: 300px;
+  flex-direction: column;
+  height: 100vh;
+}

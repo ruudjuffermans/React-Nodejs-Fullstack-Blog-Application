@@ -1,0 +1,21 @@
+:root .header {
+  --header-height: 66px;
+  --header-bg: #ffffff;
+  --header-border: none;
+  --header-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  padding: 32px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(57, 76, 96, 0.15), 0 0 1px rgba(64, 87, 109, 0.07);
+  user-select: text;
+  width: 500px;
+}
+
+.card__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

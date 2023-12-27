@@ -1,10 +1,19 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Page from "../../components/Page";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 const AppLayout = () => {
+  console.log("layout");
   return (
-    <div>
-      <Outlet />
-    </div>
+    <Page>
+      <Header />
+      <Main>
+        <Outlet context={123} />
+      </Main>
+      <Footer />
+    </Page>
   );
 };
 

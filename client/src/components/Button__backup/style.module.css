@@ -1,0 +1,114 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  line-break: anywhere;
+  font-size: 18px;
+}
+
+.btn {
+  padding: 0 30px;
+  height: 44px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.btn {
+  background-color: var(--color-text);
+  border: 1px solid rgba(128, 128, 128, 0);
+  color: #fff;
+  fill: #fff;
+}
+
+.btn--secondary {
+  background-color: #fff;
+  border: 1px solid rgba(128, 128, 128, 0);
+  color: var(--color-text);
+  fill: var(--color-text);
+}
+
+.btn--nocard {
+  background-color: transparent;
+  border: 1px dashed grey;
+  color: grey;
+  fill: var(--color-text);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  border: 1px solid rgba(128, 128, 128, 0);
+  color: #fff;
+  fill: #fff;
+}
+
+.btn--small {
+  height: 32px;
+  padding: 0 14px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn--large {
+  padding: 0 30px;
+  height: 58px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.btn--round {
+  border-radius: 60px;
+}
+
+.btn:not(:disabled):hover {
+  background-color: #fff;
+  color: var(--color-text);
+  fill: var(--color-text);
+  border: 1px solid var(--color-text);
+}
+
+.btn--primary:not(:disabled):hover {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: #fff;
+  fill: #fff;
+}
+
+.btn--secondary:not(:disabled):hover {
+  background-color: var(--color-text);
+  border: 1px solid var(--color-text);
+  color: #fff;
+  fill: #fff;
+}
+
+.btn--nocard:not(:disabled):hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #000;
+  fill: #fff;
+}
+
+.button__secondary {
+  font-size: 16px;
+
+  line-height: 28px;
+  height: 44px;
+  border-radius: 10px;
+  padding: 0 16px;
+}
+
+.btn[type="submit"] {
+  margin-bottom: 20px;
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: painted;
+}

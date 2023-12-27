@@ -1,0 +1,51 @@
+:root .card {
+  --card-p: 20px;
+  --card-bg: var(--color-bg-top);
+  --card-border-r: 16px;
+  --card-border: none;
+  --card-shadow: var(--shadow-1);
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 3px;
+  border: none;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.card__full {
+  width: 100%;
+  flex: 1;
+}
+
+.header {
+  padding: var(--card-p);
+  border-bottom: 1px solid var(--light-4);
+  font-size: 27px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.body {
+  padding: var(--card-p);
+  margin-bottom: auto;
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: auto;
+  flex-direction: column;
+}
+.footer {
+  padding: var(--card-p);
+  background-color: var(--light-2);
+  color: var(--color-text-light);
+  display: flex;
+  justify-content: space-between;
+  font-size: smaller;
+  gap: 10px;
+}

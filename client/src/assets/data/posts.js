@@ -6,6 +6,7 @@ const posts = [
     {
         date: "dec 23",
         title: "Unlocking Streaming Data with Apache Kafka.",
+        category: "Apache Kafka",
         image: kafka,
         content:
             <>
@@ -123,6 +124,7 @@ const posts = [
     {
         date: "dec 24",
         title: "The Illusion of Value: NFTs are a Scam.",
+        category: "Cryptocurrency",
         image: nft,
         content:
             <>
@@ -211,6 +213,7 @@ const posts = [
     {
         date: "dec 24",
         title: 'When is a Private Blockchain actually your Best Choice.',
+        category: "Blockchain",
         image: priv,
         content:
             <>

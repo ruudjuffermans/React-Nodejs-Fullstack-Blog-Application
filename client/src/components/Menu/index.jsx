@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Icon from "../Icon/Icon";
 import Link from "../Link";
 

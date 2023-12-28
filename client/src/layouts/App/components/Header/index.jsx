@@ -2,6 +2,7 @@ import { useState } from "react";
 import Container from "../../../../components/Container";
 import styles from "./style.module.css";
 import { NavLink } from "react-router-dom";
+import Menu from "../../../../components/Menu";
 
 const navigationLinks = [
   { name: "logout", to: "/login" },
@@ -31,6 +32,10 @@ const Header = ({ navigation = [...navigationLinks] }) => {
                 </NavLink>
               </div>
             ))}
+            <Menu show={show} setShow={setShow} />
+            <button onClick={() => setShow(!show)}>
+              menu
+            </button>
           </div>
         </div>
       </Container>

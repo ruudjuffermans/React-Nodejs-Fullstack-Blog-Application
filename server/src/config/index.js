@@ -24,7 +24,7 @@ const config = {
   SERVER_PORT: defaults("BACKEND_PORT", 3201),
   CLIENT_PORT: defaults("CLIENT_PORT", 3000),
 
-  TOKEN_SECRET: defaults("TOKEN_SECRET", ""),
+  TOKEN_SECRET: defaults("TOKEN_SECRET", "123"),
   APP_NAME: defaults("APP_NAME", ""),
 
   MAIL_SMTP_HOST: defaults("MAIL_SMTP_HOST", ""),

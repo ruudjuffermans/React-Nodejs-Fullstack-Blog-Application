@@ -8,7 +8,6 @@ const withForm = withFormik({
     password: "",
     lastname: "",
     firstname: "",
-    username: "",
   }),
 
   validationSchema: Yup.object().shape({

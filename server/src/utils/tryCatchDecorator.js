@@ -36,8 +36,8 @@ export default (controller) => async (req, res, next) => {
   try {
     await controller(req, res);
   } catch (error) {
-    if (error instanceof sequelize.BaseError) handleSequelizeError(error, res);
-    if (error instanceof jwt.JsonWebTokenError) handleJwtError(error, res);
+    if (error instanceof sequelize.BaseError) return handleSequelizeError(error, res);
+    if (error instanceof jwt.JsonWebTokenError) return handleJwtError(error, res);
     logErrorDetails(error);
     next(error);
   }

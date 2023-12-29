@@ -16,7 +16,6 @@ const corsConfiguration = {
 
 const app = express();
 
-// Initialize the loggers
 const accessLogger = new AccessLogger("AccessService");
 const errorLogger = new ErrorLogger("ErrorService");
 
@@ -43,13 +42,17 @@ try {
     app.use(router);
 
     app.use((err, req, res, next) => {
-      const error = new InternalServerError();
-      errorLogger.error(error);
-      console.log(error.message);
+      // const error = new InternalServerError();
+      // errorLogger.error(err);
+      // console.log(err.message);
+      console.log(err)
+      console.log(err)
+      console.log(err)
+      console.log(err)
 
-      res.status(error.statusCode).send({
+      res.status(err.statusCode).send({
         success: false,
-        message: error.message,
+        message: err.message,
         ...(process.env.NODE_ENV === "development" && { stack: err.stack }), // Include stack trace in development mode
       });
     });

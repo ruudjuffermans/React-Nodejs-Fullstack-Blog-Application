@@ -42,7 +42,7 @@ async function register(req, res) {
     {},
     ResponseCodes.REGISTER_SUCCESS
   );
-  return response.send(res);
+  response.send(res);
 }
 
 async function activateAccount(req, res) {

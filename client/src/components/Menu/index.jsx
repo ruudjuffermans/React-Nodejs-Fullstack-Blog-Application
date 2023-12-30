@@ -1,4 +1,4 @@
-import Icon from "../Icon/Icon";
+import Icon from "../Icon";
 import Link from "../Link";
 
 import styles from "./style.module.css";

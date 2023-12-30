@@ -20,7 +20,7 @@ const config = {
   DB_PORT: defaults("DB_PORT", 3307),
 
   CLIENT_URL: defaults("CLIENT_URL", "http://localhost:3000"),
-  SERVER_URL: defaults("SERVER_URL", "http://localhost:3001"),
+  SERVER_URL: defaults("SERVER_URL", "http://localhost:3201"),
   SERVER_PORT: defaults("BACKEND_PORT", 3201),
   CLIENT_PORT: defaults("CLIENT_PORT", 3000),
 

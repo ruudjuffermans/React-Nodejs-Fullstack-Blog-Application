@@ -36,7 +36,7 @@ try {
     const error = new InternalServerError();
   });
 
-  db.sync().then(() => {
+  db.sync({ force: false }).then(() => {
     db.options.logging = false;
 
     app.use(router);

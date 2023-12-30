@@ -1,5 +1,5 @@
 import Container from "../../../../components/Container";
-import Icon from "../../../../components/Icon/Icon";
+import Icon from "../../../../components/Icon";
 import styles from "./style.module.css";
 
 export const socials = [
